@@ -24,10 +24,26 @@ ol {
 
 a {
   color: inherit;
+  text-decoration: none;
 }
 
 img {
   width: 100%;
+}
+
+input {
+  border: none;
+  outline: none;
+}
+
+.container-fluid {
+  max-width: 1920px;
+  margin: 0 auto;
+}
+.container-xxl {
+  max-width: 1840px;
+  padding: 0 20px;
+  margin: 0 auto;
 }
 
 //Base styles

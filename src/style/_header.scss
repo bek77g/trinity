@@ -1,0 +1,103 @@
+.header {
+  position: absolute;
+  width: 100%;
+  z-index: 100;
+  padding: 40px 0;
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__left,
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: 58px;
+  }
+  &__logo {
+    position: relative;
+    z-index: 110;
+  }
+  &__burger {
+    position: relative;
+    width: 71px;
+    height: 11px;
+    z-index: 110;
+    cursor: pointer;
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      height: 2px;
+      background-color: #fff;
+      width: 60px;
+      transform: skewX(-250deg);
+    }
+    &::before {
+      top: 0;
+      right: 0;
+    }
+    &::after {
+      left: 0;
+      bottom: 0;
+    }
+    &:hover {
+      &::before,
+      &::after {
+        background-color: #33b7bc;
+      }
+      &::before {
+        right: unset;
+        left: 0;
+      }
+      &::after {
+        left: unset;
+        right: 0;
+      }
+    }
+  }
+  &__nav {
+    display: flex;
+    gap: 58px;
+    &-link {
+      position: relative;
+      @include font('Stolzl', normal, 500, 15px, none, #d7d7d7);
+      &:before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        height: 3px;
+        background-color: #33b7bc;
+        width: 0;
+        transform: skewX(-10deg);
+      }
+      &:hover {
+        color: #fff;
+        &::before {
+          width: 100%;
+        }
+      }
+    }
+  }
+  &__handlers {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+    &-item {
+      @include font('Stolzl', normal, 700, 16px, none, #fff);
+    }
+  }
+  &__menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #347856;
+  }
+}
