@@ -1,15 +1,13 @@
-@mixin font(
-  $fontFamily,
-  $fontStyle,
-  $fontWeight,
-  $fontSize,
-  $lineHeight,
-  $color
-) {
+@mixin font($fontFamily, $fontStyle, $fontWeight, $lineHeight, $color) {
   font-family: $fontFamily;
   font-style: $fontStyle;
   font-weight: $fontWeight;
-  font-size: $fontSize;
   line-height: $lineHeight;
   color: $color;
+}
+
+@mixin fontMaxAndMin($maxSize, $minSize) {
+  font-size: calc(
+    ($minSize * 1px) + ($maxSize - $minSize) * ((100vw - 320px) / (1920 - 320))
+  );
 }

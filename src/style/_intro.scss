@@ -1,0 +1,24 @@
+.intro {
+  background: linear-gradient(
+      180deg,
+      rgba(22, 21, 22, 0.9) -7.87%,
+      rgba(22, 21, 22, 0.6) 100%
+    ),
+    url('../images/intro/bg.png') center/cover no-repeat;
+  &__content {
+    height: 100vh;
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    align-content: center;
+    gap: 25px;
+  }
+  &__title {
+    @include font('Stolzl', normal, 500, none, #fff);
+    @include fontMaxAndMin(120, 60);
+  }
+  &__subtitle {
+    @include font('Stolzl', normal, 400, none, #fff);
+    @include fontMaxAndMin(32, 17);
+  }
+}

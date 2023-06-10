@@ -1,0 +1,36 @@
+.ask {
+  padding-top: 130px;
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__map {
+    width: 55%;
+    & iframe {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &__form {
+    width: 45%;
+    padding: 6px 60px;
+    &-title {
+      @include font('Stolzl', normal, 500, none, #fff);
+      @include fontMaxAndMin(70, 40);
+    }
+    &-inputs {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      margin: 70px 0 43px;
+    }
+    &-input {
+      @include fontMaxAndMin(20, 15);
+    }
+    &-button {
+      @include font('Stolzl', normal, 700, none, #fff);
+      @include fontMaxAndMin(18, 15);
+      padding: 26px 65px;
+    }
+  }
+}

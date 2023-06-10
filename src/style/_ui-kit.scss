@@ -1,16 +1,16 @@
 .ui {
   &__button {
-    @include font('Montserrat', normal, 500, 16px, 24px, #fff);
+    @include font('Montserrat', normal, 500, 24px, #fff);
     padding: 11px 77px;
     text-align: center;
     border-radius: 10px;
-    border: 1px solid #33b7bc;
+    border: 1px solid $primary-one;
     &--primary {
-      background: #33b7bc;
+      background: $primary-one;
     }
     &--secondary {
       background: transparent;
-      color: #33b7bc;
+      color: $primary-one;
     }
     &:not(:disabled):hover {
       background: #2eacb0;
@@ -27,7 +27,7 @@
     }
   }
   &__input {
-    @include font('Stolzl', normal, 400, 14px, none, #fff);
+    @include font('Stolzl', normal, 400, none, #fff);
     padding: 16px 30px;
     background: linear-gradient(
       90.75deg,
@@ -46,7 +46,7 @@
     }
     &:focus {
       color: #fff;
-      border-color: #33b7bc;
+      border-color: $primary-one;
     }
     &:invalid {
       border-color: #d34b4ba8;
@@ -83,9 +83,10 @@
       gap: 30px;
       &-item {
         position: relative;
-        @include font('Stolzl', normal, 500, 15px, none, #fff);
+        @include font('Stolzl', normal, 500, none, #fff);
+        @include fontMaxAndMin(15, 15);
         &:hover {
-          color: #33b7bc;
+          color: $primary-one;
         }
         &::before {
           content: '';
@@ -107,7 +108,7 @@
       & > span {
         transform: rotate(180deg);
         & * {
-          fill: #33b7bc;
+          fill: $primary-one;
         }
       }
       & .ui__select-dropdown {
@@ -132,6 +133,14 @@
       display: grid;
       place-items: center;
       cursor: pointer;
+      @media (max-width: 769px) {
+        width: 40px;
+        height: 40px;
+        & svg {
+          width: 22px;
+          height: 22px;
+        }
+      }
       &::before,
       &::after {
         position: absolute;
@@ -164,6 +173,23 @@
         &::before,
         &::after {
           transform: scale(1);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 769px) {
+  .ui {
+    &__fixed-media {
+      &-button {
+        &::before {
+          width: 52px;
+          height: 52px;
+        }
+        &::after {
+          width: 60px;
+          height: 60px;
         }
       }
     }

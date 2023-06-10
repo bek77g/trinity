@@ -31,20 +31,33 @@ img {
   width: 100%;
 }
 
-input {
+input,
+textarea {
   border: none;
   outline: none;
 }
 
+textarea {
+  resize: none;
+}
+
 .container-fluid {
   max-width: 1920px;
+  width: 100%;
   margin: 0 auto;
 }
 .container-xxl {
   max-width: 1840px;
+  width: 100%;
   padding: 0 20px;
   margin: 0 auto;
 }
+
+//Variables
+$primary-one: #33b7bc;
+$primary-two: #245c5f;
+$primary-three: #22ecf3;
+$primary-red: #d34b4b;
 
 //Base styles
 @import '_mixins.scss';
@@ -52,3 +65,5 @@ input {
 
 //Blocks
 @import '_header.scss';
+@import '_intro.scss';
+@import '_ask.scss';
